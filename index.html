@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>MDSV</title>
+    <link rel="stylesheet" href="./css/tachyons.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div id="canvas"></div>
+    <div id="overlay">
+      <div class="pa4 absolute top-0 left-0">
+        <div class="f3">{{ department }}</div>
+      </div>
+
+      <div class="pa4 absolute top-0 right-0">
+        <div class="f2">{{ title }}</div>
+      </div>
+
+      <div class="pa4 absolute bottom-0 left-0">
+          <div class="f2">{{ day }} {{ date }} {{ time }}</div>
+      </div>
+
+      <div class="pa4 absolute bottom-0 right-0 w-50 tr">
+        <div class="f3">{{ school }}</div>
+      </div>
+    </div>
+    <script src="./dist/bundle.js"></script>
+  </body>
+</html>
