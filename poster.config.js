@@ -9,7 +9,6 @@ module.exports = {
     'Mio Akasako',
     'Amanda Anderson-You',
     'Marisa Asari',
-    'Xingyang Cai',
     'Zui Chen',
     'Robin Coenen',
     'Michael Desai',
