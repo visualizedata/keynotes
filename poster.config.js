@@ -1,7 +1,7 @@
 module.exports = {
   title: 'KEYNOTES',
   department: 'MS Data Visualization',
-  school: 'Parsons School of Design!',
+  school: 'Parsons School of Design',
   location: 'zoom',
   date: '2021-05-13',
   time: '6:30PM',
@@ -18,7 +18,7 @@ module.exports = {
     'Douglas Locke',
     'Luella Lu',
     'David Malary',
-    'Sherry Manzar',
+    'Shaheryar (Sherry) Manzar',
     'Soonk Paik',
     'Isabel Stoddart',
     'James Troxel'
