@@ -3,7 +3,7 @@ module.exports = {
   department: 'MS Data Visualization',
   school: 'Parsons School of Design',
   location: 'zoom',
-  date: '2021-05-13',
+  date: '2021-05-12',
   time: '6:30PM',
   students: [
     'Dallas Alberti',
