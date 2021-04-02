@@ -12,7 +12,7 @@
 // ];
 
 let colors = {
-  'Parsons Red': '#DD5339',
+  'Parsons Red': '#E1E2EF',
   'Light Gray': '#F1F2F2',
   'Design Black': '#483E3E',
   'Black': '#000000',

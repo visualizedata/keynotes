@@ -6,6 +6,7 @@ module.exports = {
   date: '2020-05-13',
   time: '6:30PM',
   students: [
+    'Gabi Steele',
     'Mio Akasako',
     'Amanda Anderson-You',
     'Marisa Asari',
