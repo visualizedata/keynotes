@@ -122,7 +122,7 @@ const sketch = p => {
     p.drawTexture1({ t: texture1, c })
     p.drawTexture2({ t: texture2 })
 
-    let size = p.width < 1000 ? 300 : 500
+    let size = p.width < 1000 ? 200 : 400
     let offset = Math.sqrt(Math.pow(size, 2) + Math.pow(size, 2)) - 200
 
     p.cube({ c, size, x: 0, y: -10, z: 200, texture: texture1 })
