@@ -19,7 +19,7 @@ module.exports = {
     'Luella Lu',
     'David Malary',
     'Shaheryar Manzar',
-    'Soonk Paik',
+    'Seungyu Paik',
     'Isabel Stoddart',
     'James Troxel'
   ]
