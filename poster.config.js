@@ -16,9 +16,9 @@ module.exports = {
     'Lee Kuczewski',
     'Inhye Lee',
     'Douglas Locke',
-    'Luella Lu',
+    'Qinglu (Luella) Lu',
     'David Malary',
-    'Shaheryar Manzar',
+    'Shaheryar (Sherry) Manzar',
     'Seungyu Paik',
     'Isabel Stoddart',
     'James Troxel'
