@@ -8,7 +8,7 @@ module.exports = {
   students: [
     'Molly Cook',
     'Juliet Craig',
-    'Gisli Gudjonsson',
+    'Gísli Guðjónsson',
     'Jessie Han',
     'Yann Kerblat',
     'Yoana Kosturska',
@@ -18,6 +18,7 @@ module.exports = {
     'Omar Nema',
     'Jeremy Odell',
     'Kasey Zhuravlev',
-    'parsons.nyc'
+    'parsons.nyc',
+    'parsons.nyc/support'
   ]
 }
