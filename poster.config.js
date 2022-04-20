@@ -19,6 +19,6 @@ module.exports = {
     'Jeremy Odell',
     'Kasey Zhuravlev',
     'parsons.nyc',
-    'parsons.nyc/support'
+    'parsons.nyc/ support'
   ]
 }
