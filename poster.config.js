@@ -8,7 +8,7 @@ module.exports = {
   students: [
     'Molly Cook',
     'Juliet Craig',
-    'Gísli Guðjónsson',
+    'Gísli Gudjónsson',
     'Jessie Han',
     'Yann Kerblat',
     'Yoana Kosturska',
