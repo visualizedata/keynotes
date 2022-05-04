@@ -7,5 +7,5 @@ module.exports = {
   location: 'Online',
   date: '2022-05-18',
   time: '5:00PM',
-  students: ['Molly Cook', 'Juliet Craig', 'Gisli Gudjonsson', 'Jiahui(Jessie) Han', 'Yann Kerblat', 'Yoana Kosturska', 'Baihan Lin', 'Wenqin Lu', 'Shea Molloy', 'Omar Nema', 'Jeremy Odell', 'Kasey Zhuravlev', 'parsons.nyc']
+  students: ['Molly Cook', 'Juliet Craig', 'Gísli Gudjónsson', 'Jiahui(Jessie) Han', 'Yann Kerblat', 'Yoana Kosturska', 'Baihan Lin', 'Wenqin Lu', 'Shea Molloy', 'Omar Nema', 'Jeremy Odell', 'Kasey Zhuravlev', 'parsons.nyc', 'parsons.nyc/ support']
 };
