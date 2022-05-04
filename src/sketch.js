@@ -159,6 +159,7 @@ const sketch = p => {
   p.updateFeaturedText = () => {
     featuredTextPos++
     featuredText = featuredTextArray[featuredTextPos % featuredTextArray.length]
+    document.getElementById('person').innerText = featuredText
   }
 }
 
