@@ -9,7 +9,7 @@ module.exports = {
     'Molly Cook',
     'Juliet Craig',
     'Gísli Gudjónsson',
-    'Jessie Han',
+    'Jiahui(Jessie) Han',
     'Yann Kerblat',
     'Yoana Kosturska',
     'Baihan Lin',
