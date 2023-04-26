@@ -14,7 +14,6 @@ const sketch = p => {
   normY = 0
 
   // declare texture variables
-  let texture1
   let texture2
 
   let featuredTextPos = 0
@@ -24,7 +23,7 @@ const sketch = p => {
     config.department,
     ...config.students
   ]
-  let featuredText = featuredTextArray[0]
+  let featuredTexts = ['', '', '']
 
   p.preload = () => {
     fontface = p.loadFont('./fonts/NeueDisplay-Wide.otf')
@@ -42,6 +41,7 @@ const sketch = p => {
     normY = p.height * -0.5
 
     p.noStroke()
+    p.updateFeaturedText()
   }
 
   p.title = () => {
@@ -51,6 +51,79 @@ const sketch = p => {
 
     p.textAlign(p.CENTER, p.CENTER)
     p.text(config.title, 0, 0, 0)
+    p.pop()
+  }
+
+  // drawing a cube with text on each face
+  p.textCube = ({
+    c, // rotation angle in degrees
+    x = 0, // x-coordinate of the cube's position
+    y = 0, // y-coordinate of the cube's position
+    z = 0, // z-coordinate of the cube's position
+    size = 300, // size of the cube
+    backgroundColor, // background color of the cube
+    textColor, // color of the text on the cube
+    texts // an array of 3 strings to display on the cube's faces
+  } = {}) => {
+    // Save the current transformation matrix, stroke weight, and fill color
+    p.push()
+
+    // Translate to the cube's position in 3D space
+    p.translate(x, y, z)
+
+    // Convert the rotation angle from degrees to radians
+    let r = c => (p.PI / 180) * c
+
+    // Rotate the cube around the x- and y-axes by the given angle
+    p.rotateX(r(c))
+    p.rotateY(r(c))
+
+    // Draw the cube with a filled background color with no stroke
+    p.push()
+    p.noStroke()
+    p.fill(backgroundColor)
+    p.box(size)
+    p.pop()
+
+    // Rotate the cube so that the first face is facing the camera
+    p.rotateY(-p.HALF_PI)
+    p.rotateX(-p.HALF_PI)
+
+    // Loop through the 3 faces of the cube that have text
+    for (let i = 0; i <= 2; i++) {
+      // Save the current transformation matrix
+      p.push()
+      // Set the font settings for the text
+      p.textFont(fontface)
+      p.textSize(size * 0.08)
+      p.textAlign(p.CENTER, p.CENTER)
+      p.fill(textColor)
+      // Set the text and position for the current face of the cube
+      let text = texts[i]
+      switch (i) {
+        case 0:
+          p.translate(0, 0, size / 2 + 1)
+          break
+        case 1:
+          p.translate(size / 2 + 1, 0, 0)
+          p.rotateY(p.HALF_PI)
+          p.rotateZ(p.HALF_PI)
+          break
+        case 2:
+          p.translate(0, -size / 2 - 1, 0)
+          p.rotateX(p.HALF_PI)
+          break
+      }
+      p.push()
+      p.rotate(-p.HALF_PI / 2)
+      p.text(text, -size / 2 + 19, -size / 2 + 19, size - 40, size - 40)
+      p.pop()
+
+      // Restore the previous transformation matrix
+      p.pop()
+    }
+
+    // Restore the previous transformation matrix, stroke weight, and fill color
     p.pop()
   }
 
@@ -76,26 +149,6 @@ const sketch = p => {
     p.pop()
   }
 
-  p.drawTexture1 = ({ t, c } = {}) => {
-    t.background(colors['Parsons Red'])
-
-    t.push()
-    t.noStroke()
-    // font settings
-    t.textFont(fontface)
-    t.textSize(t.width * 0.1)
-    t.textAlign(t.CENTER, t.CENTER)
-
-    // translation
-    t.translate(t.width * -0.21, t.height * 0.47)
-    t.rotate((t.PI / 180) * -45)
-
-    t.fill(colors['White'])
-    t.text(featuredText, 20, 20, t.width - 40, t.height - 40)
-
-    t.pop()
-  }
-
   p.drawTexture2 = ({ t } = {}) => {
     t.background(colors['Parsons Red'])
     t.fill(255, 50)
@@ -119,13 +172,21 @@ const sketch = p => {
   p.draw = () => {
     p.background(colors['Parsons Red'])
 
-    p.drawTexture1({ t: texture1, c })
     p.drawTexture2({ t: texture2 })
 
     let size = p.width < 1000 ? 200 : 400
     let offset = Math.sqrt(Math.pow(size, 2) + Math.pow(size, 2)) - 200
 
-    p.cube({ c, size, x: 0, y: -10, z: 200, texture: texture1 })
+    p.textCube({
+      c,
+      size,
+      x: 0,
+      y: -10,
+      z: 200,
+      backgroundColor: colors['Parsons Red'],
+      textColor: colors['White'],
+      texts: featuredTexts
+    })
     p.cube({ c, size, x: offset, y: -10, z: 100, texture: texture2 })
     p.cube({ c, size, x: offset * -1, y: -10, z: 100, texture: texture2 })
 
@@ -136,8 +197,6 @@ const sketch = p => {
     if (pause >= pause_duration) {
       pause = 0
       c = 0
-    }
-    if (c == rotation_angle * 0.3) {
       p.updateFeaturedText()
     }
     if (c >= rotation_angle && pause < pause_duration) {
@@ -158,7 +217,11 @@ const sketch = p => {
 
   p.updateFeaturedText = () => {
     featuredTextPos++
-    featuredText = featuredTextArray[featuredTextPos % featuredTextArray.length]
+    const featuredText =
+      featuredTextArray[featuredTextPos % featuredTextArray.length]
+    const nextFeaturedText =
+      featuredTextArray[(featuredTextPos + 1) % featuredTextArray.length]
+    featuredTexts = [nextFeaturedText, featuredText, nextFeaturedText]
   }
 }
 
