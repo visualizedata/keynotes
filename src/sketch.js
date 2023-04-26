@@ -174,7 +174,7 @@ const sketch = p => {
 
     p.drawTexture2({ t: texture2 })
 
-    let size = p.width < 1000 ? 200 : 400
+    let size = p.max(p.width * 0.25, 150)
     let offset = Math.sqrt(Math.pow(size, 2) + Math.pow(size, 2)) - 200
 
     p.textCube({
