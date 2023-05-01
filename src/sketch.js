@@ -156,7 +156,7 @@ const sketch = p => {
 
     // font settings
     t.textFont(fontface)
-    t.textSize(t.width * 0.1)
+    t.textSize(t.width * 0.06)
     t.textAlign(t.CENTER, t.CENTER)
 
     // translation
@@ -174,7 +174,7 @@ const sketch = p => {
 
     p.drawTexture2({ t: texture2 })
 
-    let size = p.max(p.width * 0.25, 150)
+    let size = p.max(p.width * 0.18, 150)
     let offset = Math.sqrt(Math.pow(size, 2) + Math.pow(size, 2)) - 200
 
     p.textCube({
