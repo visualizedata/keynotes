@@ -148,7 +148,6 @@ const sketch = p => {
       backgroundColor: colors['Parsons Red'],
       textColor: colors['Transparent White'],
       texts: [config['title']],
-      textOpacity: 50,
       textSizeRatio: 0.06,
       textRotationAngle: p.HALF_PI / 2
     })
@@ -161,7 +160,6 @@ const sketch = p => {
       backgroundColor: colors['Parsons Red'],
       textColor: colors['Transparent White'],
       texts: [config['title']],
-      textOpacity: 50,
       textSizeRatio: 0.06,
       textRotationAngle: p.HALF_PI / 2
     })
