@@ -13,9 +13,6 @@ const sketch = p => {
   normX = 0
   normY = 0
 
-  // declare texture variables
-  let texture2
-
   let featuredTextPos = 0
   let featuredTextArray = [
     config.title,
@@ -33,9 +30,6 @@ const sketch = p => {
     p.createCanvas(window.innerWidth, window.innerHeight, p.WEBGL)
 
     p.textFont(fontface)
-
-    texture1 = p.createGraphics(800, 800)
-    texture2 = p.createGraphics(800, 800)
 
     normX = p.width * -0.5
     normY = p.height * -0.5
@@ -63,7 +57,9 @@ const sketch = p => {
     size = 300, // size of the cube
     backgroundColor, // background color of the cube
     textColor, // color of the text on the cube
-    texts // an array of 3 strings to display on the cube's faces
+    texts, // an array of 3 strings to display on the cube's faces
+    textSizeRatio = 0.08, // ratio of the text size to the cube's size
+    textRotationAngle = -p.HALF_PI / 2 // rotation angle of the text on the cube's faces
   } = {}) => {
     // Save the current transformation matrix, stroke weight, and fill color
     p.push()
@@ -95,11 +91,11 @@ const sketch = p => {
       p.push()
       // Set the font settings for the text
       p.textFont(fontface)
-      p.textSize(size * 0.08)
+      p.textSize(size * textSizeRatio)
       p.textAlign(p.CENTER, p.CENTER)
       p.fill(textColor)
       // Set the text and position for the current face of the cube
-      let text = texts[i]
+      let text = texts[i % texts.length]
       switch (i) {
         case 0:
           p.translate(0, 0, size / 2 + 1)
@@ -115,7 +111,7 @@ const sketch = p => {
           break
       }
       p.push()
-      p.rotate(-p.HALF_PI / 2)
+      p.rotate(textRotationAngle)
       p.text(text, -size / 2 + 19, -size / 2 + 19, size - 40, size - 40)
       p.pop()
 
@@ -127,54 +123,10 @@ const sketch = p => {
     p.pop()
   }
 
-  p.cube = ({ c, x = 0, y = 0, z = 0, size = 300, texture } = {}) => {
-    p.push()
-    p.translate(x, y, z)
-
-    p.push()
-
-    p.noStroke()
-
-    if (texture) {
-      p.texture(texture)
-      p.textureMode(p.NORMAL)
-    }
-
-    let r = c => (p.PI / 180) * c
-    p.rotateX(r(c))
-    p.rotateY(r(c))
-    p.box(size)
-
-    p.pop()
-    p.pop()
-  }
-
-  p.drawTexture2 = ({ t } = {}) => {
-    t.background(colors['Parsons Red'])
-    t.fill(255, 50)
-    t.push()
-
-    // font settings
-    t.textFont(fontface)
-    t.textSize(t.width * 0.06)
-    t.textAlign(t.CENTER, t.CENTER)
-
-    // translation
-    t.translate(t.width * 0.5, t.height * -0.21)
-    t.rotate((t.PI / 180) * 45)
-
-    // write text
-    t.text(config['title'], 0, 0, t.width, t.height)
-
-    t.pop()
-  }
-
   p.draw = () => {
     p.background(colors['Parsons Red'])
 
-    p.drawTexture2({ t: texture2 })
-
-    let size = p.max(p.width * 0.18, 150)
+    let size = p.max(p.width * 0.25, 150)
     let offset = Math.sqrt(Math.pow(size, 2) + Math.pow(size, 2)) - 200
 
     p.textCube({
@@ -187,8 +139,32 @@ const sketch = p => {
       textColor: colors['White'],
       texts: featuredTexts
     })
-    p.cube({ c, size, x: offset, y: -10, z: 100, texture: texture2 })
-    p.cube({ c, size, x: offset * -1, y: -10, z: 100, texture: texture2 })
+    p.textCube({
+      c,
+      size,
+      x: offset,
+      y: -10,
+      z: 100,
+      backgroundColor: colors['Parsons Red'],
+      textColor: colors['Transparent White'],
+      texts: [config['title']],
+      textOpacity: 50,
+      textSizeRatio: 0.06,
+      textRotationAngle: p.HALF_PI / 2
+    })
+    p.textCube({
+      c,
+      size,
+      x: -offset,
+      y: -10,
+      z: 100,
+      backgroundColor: colors['Parsons Red'],
+      textColor: colors['Transparent White'],
+      texts: [config['title']],
+      textOpacity: 50,
+      textSizeRatio: 0.06,
+      textRotationAngle: p.HALF_PI / 2
+    })
 
     p.counter()
   }
