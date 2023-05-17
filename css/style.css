@@ -38,5 +38,10 @@ canvas {
 
   color: #fff;
 
+  z-index: 998;
+}
+
+#live {
+  position: relative;
   z-index: 999;
 }
