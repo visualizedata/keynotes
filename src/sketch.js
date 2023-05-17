@@ -54,7 +54,7 @@ const sketch = p => {
     x = 0, // x-coordinate of the cube's position
     y = 0, // y-coordinate of the cube's position
     z = 0, // z-coordinate of the cube's position
-    size = 300, // size of the cube
+    size, // size of the cube
     backgroundColor, // background color of the cube
     textColor, // color of the text on the cube
     texts, // an array of 3 strings to display on the cube's faces
@@ -126,7 +126,12 @@ const sketch = p => {
   p.draw = () => {
     p.background(colors['Parsons Red'])
 
-    let size = p.max(p.width * 0.25, 150)
+    let size
+    if (p.displayWidth <= 600) {
+      size = p.width * 0.5
+    } else {
+      size = p.max(p.width * 0.25, 150)
+    }
     let offset = Math.sqrt(Math.pow(size, 2) + Math.pow(size, 2)) - 200
 
     p.textCube({
@@ -139,30 +144,33 @@ const sketch = p => {
       textColor: colors['White'],
       texts: featuredTexts
     })
-    p.textCube({
-      c,
-      size,
-      x: offset,
-      y: -10,
-      z: 100,
-      backgroundColor: colors['Parsons Red'],
-      textColor: colors['Transparent White'],
-      texts: [config['title']],
-      textSizeRatio: 0.06,
-      textRotationAngle: p.HALF_PI / 2
-    })
-    p.textCube({
-      c,
-      size,
-      x: -offset,
-      y: -10,
-      z: 100,
-      backgroundColor: colors['Parsons Red'],
-      textColor: colors['Transparent White'],
-      texts: [config['title']],
-      textSizeRatio: 0.06,
-      textRotationAngle: p.HALF_PI / 2
-    })
+
+    if (p.displayWidth > 600) {
+      p.textCube({
+        c,
+        size,
+        x: offset,
+        y: -10,
+        z: 100,
+        backgroundColor: colors['Parsons Red'],
+        textColor: colors['Transparent White'],
+        texts: [config['title']],
+        textSizeRatio: 0.06,
+        textRotationAngle: p.HALF_PI / 2
+      })
+      p.textCube({
+        c,
+        size,
+        x: -offset,
+        y: -10,
+        z: 100,
+        backgroundColor: colors['Parsons Red'],
+        textColor: colors['Transparent White'],
+        texts: [config['title']],
+        textSizeRatio: 0.06,
+        textRotationAngle: p.HALF_PI / 2
+      })
+    }
 
     p.counter()
   }
