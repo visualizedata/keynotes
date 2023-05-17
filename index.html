@@ -1,32 +1,40 @@
 <html>
-  <head>
-    <title>MDSV</title>
-    <link rel="stylesheet" href="./css/tachyons.css" />
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-  <body>
-    <div id="canvas"></div>
-    <div id="overlay">
-      <div class="pa4 absolute top-0 left-0 dn db-ns">
-        <div class="f4">{{ department }}</div>
-      </div>
 
-      <div class="pa4 absolute top-0 right-0">
-        <div class="f4">{{ title }}</div>
-      </div>
+<head>
+  <title>MDSV</title>
+  <link rel="stylesheet" href="./css/tachyons.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
 
-      <!-- <div class="pa4 absolute top-0 left-0">
+<body>
+  <div id="canvas"></div>
+  <iframe
+    src="https://cdnapisec.kaltura.com/p/5135432/embedPlaykitJs/uiconf_id/51972042?iframeembed=true&amp;entry_id=1_e5d53edm"
+    style="width:850px;height:478px;" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""
+    allow="autoplay *; fullscreen *; encrypted-media *" frameborder="0"></iframe>
+
+  <div id="overlay">
+    <div class="pa4 absolute top-0 left-0 dn db-ns">
+      <div class="f4">{{ department }}</div>
+    </div>
+
+    <div class="pa4 absolute top-0 right-0">
+      <div class="f4">{{ title }}</div>
+    </div>
+
+    <!-- <div class="pa4 absolute top-0 left-0">
         <iframe src="https://player.vimeo.com/video/545201647?title=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
       </div> -->
 
-      <div class="pa4 absolute bottom-0 left-0">
-        <div class="f4">{{ day }} {{ date }} {{ time }}</div>
-      </div>
-
-      <div class="pa4 absolute bottom-0 right-0 w-50 tr dn db-ns">
-        <div class="f4">{{ school }}</div>
-      </div>
+    <div class="pa4 absolute bottom-0 left-0">
+      <div class="f4">{{ day }} {{ date }} {{ time }}</div>
     </div>
-    <script src="./dist/bundle.js"></script>
-  </body>
+
+    <div class="pa4 absolute bottom-0 right-0 w-50 tr dn db-ns">
+      <div class="f4">{{ school }}</div>
+    </div>
+  </div>
+  <script src="./dist/bundle.js"></script>
+</body>
+
 </html>
