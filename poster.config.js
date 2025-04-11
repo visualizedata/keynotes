@@ -3,19 +3,29 @@ module.exports = {
   department: 'MS Data Visualization',
   school: 'Parsons School of Design',
   location: 'Online',
-  date: '2024-05-13',
-  time: '6:00PM',
+  date: '2025-05-13',
+  time: '6:30PM',
   students: [
-    'Sarah Bacharach',
-    'Gigie Hall',
-    'HaoChe Hung',
-    'Fern Itthisang',
-    'Elene Jikia',
-    'Chanel Kim',
-    'Mayank Munjal',
-    'Sheriff Oseni',
-    'YuMing Wu',
-    'parsons.nyc',
-    'parsons.nyc/ support'
-  ]
+    'Lisa Sakai Quinley',
+    'Tak Watanabe',
+    'Josh Strupp',
+    'Hyeonjeong Kwon',
+    'Daia Bromberg',
+    'Monsicha Srisuantang',
+    'Xuan',
+    'Harshita Chakravadhanula',
+    'Nour Al Safadi',
+    'Katherine Chui',
+    'Annie Lee',
+    'Ian Yu',
+    'Eva Lucy Alvarado',
+    'Sanidhya Sharma',
+    'Ani Matevosian',
+    'Sophie Graves',
+    'Steph Wu',
+    'Livia Ramos',
+  ].sort((a, b) => {
+    const getLastName = (name) => name.split(' ').slice(-1)[0].toLowerCase();
+    return getLastName(a).localeCompare(getLastName(b));
+  }).concat(['parsons.nyc', 'parsons.nyc/ support'])
 }
