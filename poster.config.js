@@ -18,7 +18,6 @@ module.exports = {
     'Katherine Chui',
     'Annie Lee',
     'Ian Yu',
-    'Eva Lucy Alvarado',
     'Sanidhya Sharma',
     'Ani Matevosian',
     'Sophie Graves',
