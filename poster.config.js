@@ -12,7 +12,7 @@ module.exports = {
     'Hyeonjeong Kwon',
     'Daia Bromberg',
     'Monsicha Srisuantang',
-    'Xuan',
+    'Tan De Xuan',
     'Harshita Chakravadhanula',
     'Nour Al Safadi',
     'Katherine Chui',

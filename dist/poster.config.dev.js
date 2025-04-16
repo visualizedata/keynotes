@@ -7,7 +7,7 @@ module.exports = {
   location: 'Online',
   date: '2025-05-13',
   time: '6:30PM',
-  students: ['Lisa Sakai Quinley', 'Tak Watanabe', 'Josh Strupp', 'Hyeonjeong Kwon', 'Daia Bromberg', 'Monsicha Srisuantang', 'Xuan', 'Harshita Chakravadhanula', 'Nour Al Safadi', 'Katherine Chui', 'Annie Lee', 'Ian Yu', 'Sanidhya Sharma', 'Ani Matevosian', 'Sophie Graves', 'Steph Wu', 'Livia Ramos'].sort(function (a, b) {
+  students: ['Lisa Sakai Quinley', 'Tak Watanabe', 'Josh Strupp', 'Hyeonjeong Kwon', 'Daia Bromberg', 'Monsicha Srisuantang', 'Tan De Xuan', 'Harshita Chakravadhanula', 'Nour Al Safadi', 'Katherine Chui', 'Annie Lee', 'Ian Yu', 'Sanidhya Sharma', 'Ani Matevosian', 'Sophie Graves', 'Steph Wu', 'Livia Ramos'].sort(function (a, b) {
     var getLastName = function getLastName(name) {
       return name.split(' ').slice(-1)[0].toLowerCase();
     };
