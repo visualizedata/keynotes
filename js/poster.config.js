@@ -2,9 +2,15 @@ const config = {
   title: 'KEYNOTES',
   department: 'MS Data Visualization',
   school: 'Parsons School of Design',
-  location: 'Wollman Hall - Room 500\n65 West 11th St',
+  location: 'Wollman Hall - Room 500<br>65 West 11th St',
   date: '2026-05-13',
   time: '6:00PM',
+  themes: [
+    'Arts & Culture',
+    'Food',
+    'Film',
+    'Cultural Trends'
+  ],
   students: [
     'Neven Armanios',
     'Olivia Kasmin',

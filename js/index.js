@@ -1,4 +1,4 @@
-import { sketch } from './sketch.js';
+import { sketch } from './sketch.web.js';
 
 window.addEventListener("load", () => {
   const deptEl = document.getElementById("config-department");
@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
 
   deptEl.innerHTML = `${config.department}`;
   titleEl.innerHTML = `${config.title}`;
-  dateEl.innerHTML = `${day} ${date} ${config.time}`;
+  dateEl.innerHTML = `${day} ${date} ${config.time}<br>${config.location}`;
   schoolEl.innerHTML = `${config.school}`;
 });
 
