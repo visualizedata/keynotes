@@ -2,8 +2,13 @@
 
 <head>
   <title>MDSV</title>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
   <link rel="stylesheet" href="./css/tachyons.css" />
   <link rel="stylesheet" href="./css/style.css" />
+  <script src="./js/libs/p5.js"></script>
+  <script src="./js/libs/moment.js"></script>
+  <script src="./js/colors.js"></script>
+  <script src="./js/poster.config.js"></script>
 </head>
 
 <body>
@@ -11,22 +16,22 @@
 
   <div id="overlay">
     <div class="pa4 absolute top-0 left-0 dn db-ns">
-      <div class="f4">{{ department }}</div>
+      <div class="f4" id="config-department"></div>
     </div>
 
     <div class="pa4 absolute top-0 right-0">
-      <div class="f4">{{ title }}</div>
+      <div class="f4" id="config-title"></div>
     </div>
 
     <div class="pa4 absolute bottom-0 left-0">
-      <div class="f4">{{ day }} {{ date }} {{ time }}</div>
+      <div class="f4" id="config-date"></div>
     </div>
 
     <div class="pa4 absolute bottom-0 right-0 w-50 tr dn db-ns">
-      <div class="f4">{{ school }}</div>
+      <div class="f4" id="config-school"></div>
     </div>
   </div>
-  <script src="./dist/bundle.js"></script>
+   <script type="module" src="./js/index.js"></script>
 </body>
 
 </html>

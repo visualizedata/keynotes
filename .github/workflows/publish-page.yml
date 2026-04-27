@@ -12,16 +12,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build
-
       - name: Copy
         run: |
           mkdir www
-          cp -r index.html favicon.ico src fonts css dist www/
+          cp -r index.html favicon.ico css fonts js www/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4

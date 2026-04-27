@@ -1,7 +1,3 @@
-const moment = require('moment')
-const colors = require('./colors.js')
-const config = require('../poster.config.js')
-
 const sketch = p => {
   let fontface
   let c = 0
@@ -10,8 +6,8 @@ const sketch = p => {
   let rotation_angle = 90
 
   // normalized coordinates
-  normX = 0
-  normY = 0
+  let normX = 0;
+  let normY = 0;
 
   let featuredTextPos = 0
   let featuredTextArray = [
@@ -207,4 +203,4 @@ const sketch = p => {
   }
 }
 
-module.exports = sketch
+export {sketch};
