@@ -15,7 +15,7 @@ jobs:
       - name: Copy
         run: |
           mkdir www
-          cp -r index.html favicon.ico css fonts js www/
+          cp -r index.html favicon.ico css fonts js slides www/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
