@@ -20,6 +20,7 @@ const sketch = p => {
 
   p.setup = () => {
     p.mcanvas = p.createCanvas(window.innerWidth, window.innerHeight, p.WEBGL)
+    p.updateCanvasSize()
     p.textFont(fontface)
     p.noStroke()
     p.updateFeaturedText()
@@ -142,7 +143,7 @@ const sketch = p => {
         y: -10,
         z: 100,
         backgroundColor: currentBackground,//colors['Parsons Red'],
-        textColor: colors['Transparent White'],
+        textColor: config.students.includes(featuredTexts[0]) ? colors['Pink'] : colors['White'],
         texts: [config['title']],
         textSizeRatio: 0.06,
         textRotationAngle: p.HALF_PI / 2
@@ -154,7 +155,7 @@ const sketch = p => {
         y: -10,
         z: 100,
         backgroundColor: currentBackground,//colors['Parsons Red'],
-        textColor: colors['Transparent White'],
+        textColor: config.students.includes(featuredTexts[0]) ? colors['Pink'] : colors['White'],
         texts: [config['title']],
         textSizeRatio: 0.06,
         textRotationAngle: p.HALF_PI / 2
@@ -186,9 +187,8 @@ const sketch = p => {
     }
   }
 
-  p.updateCanvasSize = (w, h) => {
-    console.log('resize canvas', w, h)
-    p.resizeCanvas(w, h)
+  p.updateCanvasSize = () => {
+    p.updateCanvas16x9()
   }
 
   p.updateFeaturedText = () => {

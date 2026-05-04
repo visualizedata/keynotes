@@ -4,5 +4,6 @@ const colors = {
   'Design Black': '#483E3E',
   'Black': '#000000',
   'White': '#FFFFFF',
-  'Transparent White': 'rgba(255 ,255, 255, 0.19)'
+  'Transparent White': 'rgba(255 ,255, 255, 0.19)',
+  'Pink': '#ED6E65',
 };

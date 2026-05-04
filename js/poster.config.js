@@ -7,9 +7,9 @@ const config = {
   time: '6:00PM',
   themes: [
     'Arts & Culture',
-    'Food',
-    'Film',
-    'Cultural Trends'
+    'Food & Dining',
+    'Cultural Trends',
+    'Movies & Narratives',
   ],
   students: [
     'Neven Armanios',
